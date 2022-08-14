@@ -1,0 +1,112 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+
+//recursive function which print n natural number //
+int printN(int n)
+{
+    return( printN(n-1));
+  
+}
+
+//recursive function which print sum of n natural number //
+int sumN(int n)
+{
+    if(n==1)
+    return 1;
+    
+    return(n + sumN(n-1));
+}
+
+//recursive function which print sum of even n natural number //
+int evensum(int n)
+{
+    if(n==1)
+     return 2;
+    return(2*n + evensum(n-1));
+    
+}
+
+//recursive function which print square sum of n natural number //
+int squaresum(int n)
+{
+    if(n==1)
+    return 1;
+    return (n*n + squaresum(n-1));
+}
+
+//recursive function which print factorial in given range//
+int factorial(int n)
+{
+    if(n==1||n==0)
+    return 1;
+   return (n * factorial(n-1));
+}
+
+//recursive function which print sum of digit //
+int digitsum( int n)
+{
+    if(n==0)
+    return n;
+    
+    int lastdigit = n%10;
+    int remaining= n/10;
+    return (lastdigit+digitsum(remaining));
+}
+
+
+int main()
+{
+  int input,p;
+  cout<< "\nPRINT N NATURAL NUMBER :\n ENTER 1" ;
+  cout<< "\nSUM OF N NATURAL NUMBER :\nENTER 2 " ;
+  cout<< "\nSUM OF EVEN N NATURAL NUMBER :\nENTER 3" ;
+  cout<< "\nSUM OF DIGITS :\nENTER 4 " ;
+  cout<< "\nFACTORIAL OF N NATURAL NUMBER :\nENTER 5 " ;
+  cout<< "\nSUM OF SQUARE OF N NATURAL NUMBER :\nENTER 6 " ;
+  cout<< "\nPLEASE ENTER YOUR CHOICE :\n " ;
+  cout<< "\nPLEASE ENTER THE RANGE OF THE NUMBER :\n " ;
+  cin >> input;
+  cin >>p;
+  
+  switch(input)
+  {
+      case 1:
+      cout << printN(p);
+              break;
+      
+      case 2: 
+      cout << sumN(p);
+              break;
+      
+      case 3: 
+      cout << evensum(p);
+              break;
+      
+      case 4:
+      cout << digitsum(p);
+              break;
+          
+      case 5:
+      cout << factorial(p);
+              break;
+     
+      case 6: 
+      cout << squaresum(p);
+              break;
+    
+     default :
+     cout<<"\n SELECT THE RIGHT CHOICE :\n";
+  }
+  
+  
+  
+    return 0;
+}
