@@ -12,8 +12,9 @@ using namespace std;
 //recursive function which print n natural number //
 int printN(int n)
 {
-    return( printN(n-1));
-  
+    if(n!=0){
+      return( printN(n-1));
+    }
 }
 
 //recursive function which print sum of n natural number //
