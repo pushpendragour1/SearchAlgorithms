@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+class RowColMatrix{
+public static void main(String[] args) {
+    int[][] arr ={ {10,20,30,40},
+                   {15,25,35,45},
+                   {28,29,37,49},
+                   {33,34,38,50}
+    };
+    int[] nums ={10,20,39,48,59};
+    int target = 37;
+    System.out.println(Arrays.toString(nums));//Arrays.toString(search2dArray(arr, target)
+}
+static int[] search2dArray(int[][] nums,int target)
+{
+    int r = 0;
+    int c = nums.length-1;
+
+   while(r < nums.length && c >=0 )
+   {
+       if(nums[r][c] == target)
+       {
+        return new int[] { r, c}; 
+       }
+
+       if(nums[r][c] < target)
+       {
+         r++;
+       }
+       else // if(nums[r][c] > target)
+       {
+        c--;
+       }
+   }
+   return new int[] {-1,-1};  
+}
+}
