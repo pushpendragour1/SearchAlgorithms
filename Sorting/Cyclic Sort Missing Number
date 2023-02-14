@@ -1,0 +1,29 @@
+  public static void main(String[] args){
+        int[] arr = {4,2,1,0};
+        int ans = cyclicSort(arr);
+        System.out.println(ans);
+        }     
+        static void swap(int[] arr, int first, int second){
+            int temp = arr[first];
+            arr[first] = arr[second];
+            arr[second] = temp;
+           }
+       static int cyclicSort(int[] arr)
+        {
+          for(int i =0; i < arr.length;)
+          {  int index = arr[i];
+             if(arr[i] < arr.length && arr[i] != arr[index]){
+                 swap(arr, i, index);
+             }
+             else
+             {  i++; }
+          }
+         
+        for(int index =0; index < arr.length; index++)
+        {
+           if(arr[index] != index)
+              return index;
+        }
+        //case:2 
+        return arr.length;
+    }
