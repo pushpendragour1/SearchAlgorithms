@@ -1,0 +1,23 @@
+ 
+ //case : 1 when value Start with   [ 1 to N ] ?
+ for(int i=0; i< arr.length;)
+         {
+             int index = arr[i] - 1;
+             if(arr[i] != arr[index])
+             {
+                 swap(arr, i, index);
+             }
+             else
+              { i++; }
+          }
+ // case : 2 when value Start with [ 0 to n ]
+  for(int i=0; i< arr.length;)
+         {
+             int index = arr[i];
+             if(arr[i] != arr[index])
+             {
+                 swap(arr, i, index);
+             }
+             else
+              { i++; }
+          }
